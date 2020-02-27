@@ -2,6 +2,10 @@ import requests, datetime, json, calendar, ctypes, PIL
 from time import sleep
 from PIL import ImageFont, Image, ImageDraw
 
+USERNAME = "USERNAME" #Enter username
+PASSWORD = "PASSWORD" #Enter password
+SCHOOLID = "SCHOOLID" #Enter school id
+
 #Get current date
 date = datetime.datetime.now()
 today = date.strftime("%Y-%m-%d")
@@ -95,8 +99,8 @@ def Picture():
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, "IMAGE PATH" , 0)
 
-GetAuth("USERNAME", "PASSWORD", "schoolid")
+GetAuth(USERNAME, PASSWORD, SCHOOLID)
 Download()
 Parse()
-Picture()
+#Picture() #Not recommended
 Exit()
